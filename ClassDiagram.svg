@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000">
+  <defs>
+    <style>
+      .class-box { fill: #fff; stroke: #000; stroke-width: 2; }
+      .interface-box { fill: #f0f0ff; stroke: #000; stroke-width: 2; }
+      .class-name { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .method { font-family: Arial, sans-serif; font-size: 12px; }
+      .stereotype { font-family: Arial, sans-serif; font-size: 10px; font-style: italic; }
+      .line { stroke: #000; stroke-width: 1.5; fill: none; }
+      .arrow { fill: #000; }
+      .dashed { stroke-dasharray: 5,5; }
+    </style>
+  </defs>
+  
+  <!-- IStack Interface -->
+  <g id="IStack">
+    <rect class="interface-box" x="50" y="50" width="250" height="180"/>
+    <text class="stereotype" x="175" y="70" text-anchor="middle">&lt;&lt;interface&gt;&gt;</text>
+    <text class="class-name" x="175" y="90" text-anchor="middle">IStack&lt;T&gt;</text>
+    <line x1="50" y1="95" x2="300" y2="95" stroke="#000" stroke-width="1"/>
+    <text class="method" x="60" y="115">+ push(value: T): void</text>
+    <text class="method" x="60" y="135">+ pop(): T</text>
+    <text class="method" x="60" y="155">+ peek(): T</text>
+    <text class="method" x="60" y="175">+ isEmpty(): boolean</text>
+    <text class="method" x="60" y="195">+ size(): int</text>
+    <text class="method" x="60" y="215">+ clear(): void</text>
+  </g>
+  
+  <!-- StackArrayList Class -->
+  <g id="StackArrayList">
+    <rect class="class-box" x="50" y="300" width="250" height="200"/>
+    <text class="class-name" x="175" y="325" text-anchor="middle">StackArrayList&lt;T&gt;</text>
+    <line x1="50" y1="330" x2="300" y2="330" stroke="#000" stroke-width="1"/>
+    <text class="method" x="60" y="350">- elements: ArrayList&lt;T&gt;</text>
+    <line x1="50" y1="360" x2="300" y2="360" stroke="#000" stroke-width="1"/>
+    <text class="method" x="60" y="380">+ StackArrayList()</text>
+    <text class="method" x="60" y="400">+ push(value: T): void</text>
+    <text class="method" x="60" y="420">+ pop(): T</text>
+    <text class="method" x="60" y="440">+ peek(): T</text>
+    <text class="method" x="60" y="460">+ isEmpty(): boolean</text>
+    <text class="method" x="60" y="480">+ size(): int</text>
+  </g>
+  
+  <!-- ICalculator Interface -->
+  <g id="ICalculator">
+    <rect class="interface-box" x="450" y="50" width="300" height="120"/>
+    <text class="stereotype" x="600" y="70" text-anchor="middle">&lt;&lt;interface&gt;&gt;</text>
+    <text class="class-name" x="600" y="90" text-anchor="middle">ICalculator</text>
+    <line x1="450" y1="95" x2="750" y2="95" stroke="#000" stroke-width="1"/>
+    <text class="method" x="460" y="120">+ evaluate(expression: String): int</text>
+    <text class="method" x="460" y="145" font-size="10">   throws ArithmeticException,</text>
+    <text class="method" x="460" y="160" font-size="10">   IllegalArgumentException</text>
+  </g>
+  
+  <!-- PostfixCalculator Class -->
+  <g id="PostfixCalculator">
+    <rect class="class-box" x="450" y="250" width="300" height="250"/>
+    <text class="class-name" x="600" y="275" text-anchor="middle">PostfixCalculator</text>
+    <line x1="450" y1="280" x2="750" y2="280" stroke="#000" stroke-width="1"/>
+    <text class="method" x="460" y="300">- stack: IStack&lt;Integer&gt;</text>
+    <line x1="450" y1="310" x2="750" y2="310" stroke="#000" stroke-width="1"/>
+    <text class="method" x="460" y="330">+ PostfixCalculator(IStack&lt;Integer&gt;)</text>
+    <text class="method" x="460" y="350">+ evaluate(String): int</text>
+    <text class="method" x="460" y="370">- isOperator(String): boolean</text>
+    <text class="method" x="460" y="390">- isOperand(String): boolean</text>
+    <text class="method" x="460" y="410">- performOperation(int, int,</text>
+    <text class="method" x="460" y="430">    String): int</text>
+  </g>
+  
+  <!-- Main Class -->
+  <g id="Main">
+    <rect class="class-box" x="850" y="300" width="250" height="100"/>
+    <text class="class-name" x="975" y="330" text-anchor="middle">Main</text>
+    <line x1="850" y1="335" x2="1100" y2="335" stroke="#000" stroke-width="1"/>
+    <line x1="850" y1="345" x2="1100" y2="345" stroke="#000" stroke-width="1"/>
+    <text class="method" x="860" y="370">+ main(String[]): void</text>
+  </g>
+  
+  <!-- StackTest Class -->
+  <g id="StackTest">
+    <rect class="class-box" x="50" y="600" width="250" height="150"/>
+    <text class="class-name" x="175" y="625" text-anchor="middle">StackTest</text>
+    <line x1="50" y1="630" x2="300" y2="630" stroke="#000" stroke-width="1"/>
+    <text class="method" x="60" y="650">- stack: IStack&lt;Integer&gt;</text>
+    <line x1="50" y1="660" x2="300" y2="660" stroke="#000" stroke-width="1"/>
+    <text class="method" x="60" y="680">+ setUp(): void</text>
+    <text class="method" x="60" y="700">+ testPushAndPop(): void</text>
+    <text class="method" x="60" y="720">+ testPeek(): void</text>
+    <text class="method" x="60" y="740">+ ...</text>
+  </g>
+  
+  <!-- CalculatorTest Class -->
+  <g id="CalculatorTest">
+    <rect class="class-box" x="450" y="600" width="300" height="150"/>
+    <text class="class-name" x="600" y="625" text-anchor="middle">CalculatorTest</text>
+    <line x1="450" y1="630" x2="750" y2="630" stroke="#000" stroke-width="1"/>
+    <text class="method" x="460" y="650">- calculator: ICalculator</text>
+    <line x1="450" y1="660" x2="750" y2="660" stroke="#000" stroke-width="1"/>
+    <text class="method" x="460" y="680">+ setUp(): void</text>
+    <text class="method" x="460" y="700">+ testSimpleAddition(): void</text>
+    <text class="method" x="460" y="720">+ testComplexExpression1(): void</text>
+    <text class="method" x="460" y="740">+ ...</text>
+  </g>
+  
+  <!-- Relationships -->
+  
+  <!-- StackArrayList implements IStack -->
+  <defs>
+    <marker id="implements" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="white" stroke="black" stroke-width="1"/>
+    </marker>
+  </defs>
+  <line x1="175" y1="300" x2="175" y2="230" class="line dashed" marker-end="url(#implements)"/>
+  
+  <!-- PostfixCalculator implements ICalculator -->
+  <line x1="600" y1="250" x2="600" y2="170" class="line dashed" marker-end="url(#implements)"/>
+  
+  <!-- PostfixCalculator uses IStack -->
+  <defs>
+    <marker id="uses" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="black"/>
+    </marker>
+  </defs>
+  <line x1="450" y1="280" x2="300" y2="140" class="line" marker-end="url(#uses)"/>
+  <text x="360" y="200" font-size="11">uses</text>
+  
+  <!-- Main uses IStack and ICalculator -->
+  <line x1="850" y1="350" x2="750" y2="350" class="line dashed" marker-end="url(#uses)"/>
+  <line x1="950" y1="300" x2="175" y2="230" class="line dashed" marker-end="url(#uses)"/>
+  <text x="800" y="340" font-size="11">creates</text>
+  
+  <!-- StackTest tests StackArrayList -->
+  <line x1="175" y1="600" x2="175" y2="500" class="line dashed" marker-end="url(#uses)"/>
+  <text x="185" y="550" font-size="11">tests</text>
+  
+  <!-- CalculatorTest tests PostfixCalculator -->
+  <line x1="600" y1="600" x2="600" y2="500" class="line dashed" marker-end="url(#uses)"/>
+  <text x="610" y="550" font-size="11">tests</text>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="850" y="450" width="250" height="120" fill="#fffff0" stroke="#000" stroke-width="1"/>
+    <text x="975" y="475" text-anchor="middle" font-weight="bold" font-size="14">Leyenda</text>
+    <line x1="860" y1="490" x2="950" y2="490" class="line dashed"/>
+    <text x="960" y="495" font-size="11">implements / uses</text>
+    <line x1="860" y1="510" x2="950" y2="510" class="line"/>
+    <polygon points="950,510 940,507 940,513" fill="black"/>
+    <text x="960" y="515" font-size="11">composition / association</text>
+    <rect x="860" y="525" width="40" height="20" fill="#f0f0ff" stroke="#000"/>
+    <text x="910" y="540" font-size="11">Interface</text>
+    <rect x="860" y="550" width="40" height="20" fill="#fff" stroke="#000"/>
+    <text x="910" y="565" font-size="11">Class</text>
+  </g>
+  
+  <!-- Notes -->
+  <g id="notes">
+    <rect x="50" y="850" width="300" height="100" fill="#ffffcc" stroke="#666" stroke-width="1"/>
+    <text x="60" y="870" font-size="12" font-weight="bold">Notas importantes:</text>
+    <text x="60" y="890" font-size="11">• Todas las interfaces usan genéricos</text>
+    <text x="60" y="910" font-size="11">• StackArrayList usa ArrayList internamente</text>
+    <text x="60" y="930" font-size="11">• PostfixCalculator es intercambiable</text>
+  </g>
+</svg>
