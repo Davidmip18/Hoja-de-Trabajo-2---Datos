@@ -2,9 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * JUnit tests for the Postfix Calculator.
- */
 public class CalculatorTest {
     
     private ICalculator calculator;
@@ -80,7 +77,6 @@ public class CalculatorTest {
     
     @Test
     public void testOrderOfOperands() {
-        // Order matters for non-commutative operations
         int result = calculator.evaluate("10 3 -");
         assertEquals(7, result); // 10 - 3 = 7, not 3 - 10 = -7
     }

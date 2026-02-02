@@ -2,19 +2,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Main program to evaluate postfix expressions from a file.
- */
 public class Main {
     
     public static void main(String[] args) {
-        // Create stack implementation
         IStack<Integer> stack = new StackArrayList<>();
         
-        // Create calculator with the stack
         ICalculator calculator = new PostfixCalculator(stack);
         
-        // Read and process the file
         String fileName = "datos.txt";
         
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {

@@ -2,9 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * JUnit tests for the Stack implementation.
- */
 public class StackTest {
     
     private IStack<Integer> stack;
