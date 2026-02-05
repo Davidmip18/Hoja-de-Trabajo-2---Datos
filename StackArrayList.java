@@ -10,7 +10,7 @@ public class StackArrayList<T> implements IStack<T> {
         elements = new ArrayList<>();
     }
     
-    /
+    
     @Override
     public void push(T value) {
         elements.add(value);

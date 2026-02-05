@@ -66,14 +66,16 @@ public class PostfixCalculator implements ICalculator {
                 if (b == 0) {
                     throw new ArithmeticException("Division by zero");
                 }
-                return a / b;
-            case "%":
+                yield a / b;
+            }
+            case "%" -> {
                 if (b == 0) {
                     throw new ArithmeticException("Modulo by zero");
                 }
-                return a % b;
-            default:
+                yield a % b;
+            }
+            default ->
                 throw new IllegalArgumentException("Unknown operator: " + operator);
-        }
+        };
     }
 }
