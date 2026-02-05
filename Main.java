@@ -9,7 +9,12 @@ public class Main {
         
         ICalculator calculator = new PostfixCalculator(stack);
         
-        String fileName = "datos.txt";
+        String fileName;
+        if (args.length > 0) {
+            fileName = args[0];
+        } else {
+            fileName = "datos.txt";
+        }
         
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
